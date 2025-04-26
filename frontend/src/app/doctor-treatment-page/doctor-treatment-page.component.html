@@ -1,0 +1,31 @@
+<div class="doctor-container" *ngIf="isDoctor(); else notDoctor">
+  <h2>Add Treatment for Patient</h2>
+
+  <form (ngSubmit)="addTreatment()">
+    <div class="form-group">
+      <label>Condition (patient problem):</label>
+      <select [(ngModel)]="conditionId" name="conditionId" required>
+        <option [value]="null" disabled selected>Select a condition</option>
+        <option *ngFor="let condition of conditions" [value]="condition.id">
+          {{ condition.description }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Treatment Name:</label>
+      <input type="text" [(ngModel)]="name" name="name" placeholder="Enter treatment name" required />
+    </div>
+
+    <div class="form-group">
+      <label>Description:</label>
+      <textarea [(ngModel)]="description" name="description" placeholder="Enter treatment description" required></textarea>
+    </div>
+
+    <button type="submit">Add Treatment</button>
+  </form>
+</div>
+
+<ng-template #notDoctor>
+  <p class="warning">Only doctors can add treatments!</p>
+</ng-template>

@@ -1,0 +1,15 @@
+<header>
+  <div class="container">
+    <a routerLink="/" class="logo">Health Center</a>
+    <div class="right">
+      <nav>
+        <ul>
+          <li><a routerLink="/info">Info</a></li>
+          <li *ngIf="isDoctor()"><a routerLink="/doctor/add-treatment">Add Treatment</a></li>
+          <li *ngIf="!isLoggedIn()"><a routerLink="/login">Log in</a></li>
+          <li *ngIf="isLoggedIn()"><a (click)="logout()">Log out</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,19 @@
+<app-search></app-search>
+<app-tags></app-tags>
+<ul>
+    <li *ngFor="let med of meds">
+        <a routerLink="/med/{{med.id}}">
+            <img src="{{med.imageUrl}}" alt="">
+            <div class="content">
+                <div class="name">
+                    {{med.name}}
+                </div>
+                <div class="price">
+                    <span>
+                        {{med.price|currency}}
+                    </span>
+                </div>
+            </div>
+        </a>
+    </li>
+</ul>

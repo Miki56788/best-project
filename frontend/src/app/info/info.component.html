@@ -1,0 +1,47 @@
+<div class="info-container" *ngIf="userData">
+
+  <div *ngIf="!isDoctor">
+    <h2>Patient Info</h2>
+    <p><strong>Name:</strong> {{ userData.name }}</p>
+    <p><strong>Sex:</strong> {{ userData.sex }}</p>
+    <p><strong>Date of Birth:</strong> {{ userData.birth_date }}</p>
+
+    <h3>Your Treatments:</h3>
+
+    <div *ngIf="patientTreatments.length > 0; else noPatientTreatments" class="treatment-list">
+      <div *ngFor="let treatment of patientTreatments" class="treatment-card">
+        <div class="treatment-name">{{ treatment.name }}</div>
+        <div class="treatment-description">{{ treatment.description }}</div>
+        <div class="treatment-date">Prescribed At: {{ treatment.prescribed_at }}</div>
+      </div>
+    </div>
+
+    <ng-template #noPatientTreatments>
+      <p>No treatments assigned yet.</p>
+    </ng-template>
+  </div>
+
+  <div *ngIf="isDoctor">
+    <h2>Doctor Info</h2>
+    <p><strong>Name:</strong> {{ userData.name }}</p>
+    <p><strong>Specialization:</strong> {{ userData.specialization }}</p>
+    <p><strong>Email:</strong> {{ userData.email }}</p>
+    <p><strong>Experience:</strong> {{ userData.years_of_experience }} years</p>
+
+    <h3>Your Assigned Treatments:</h3>
+
+    <div *ngIf="doctorTreatments.length > 0; else noDoctorTreatments" class="treatment-list">
+      <div *ngFor="let treatment of doctorTreatments" class="treatment-card">
+        <div class="treatment-name">{{ treatment.name }}</div>
+        <div class="treatment-description">{{ treatment.description }}</div>
+        <div class="treatment-date">Prescribed At: {{ treatment.prescribed_at }}</div>
+        <button class="delete-btn" (click)="deleteTreatment(treatment.id)">Delete</button>
+      </div>
+    </div>
+
+    <ng-template #noDoctorTreatments>
+      <p>No treatments assigned yet.</p>
+    </ng-template>
+  </div>
+
+</div>
