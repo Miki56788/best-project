@@ -1,0 +1,10 @@
+---DOCTORS---
+
+Dr. Popov - Popov   P0p0v321
+Dr. Ivanov - Ivanov Iv@n0v321
+
+
+---PATIENTS---
+
+John Smith - Smith p@tientsmith12
+Jane Doe - Doe p@tientdoe123

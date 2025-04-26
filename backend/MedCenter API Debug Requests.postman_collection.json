@@ -1,0 +1,443 @@
+{
+	"info": {
+		"_postman_id": "134a1cf9-dfeb-4499-9fdd-6cfcfe1d07b0",
+		"name": "MedCenter API Debug Requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43776659",
+		"_collection_link": "https://alexeyrenzyak.postman.co/workspace/Lab9~791aa707-e06a-434a-b797-38e3f39457c6/collection/43776659-134a1cf9-dfeb-4499-9fdd-6cfcfe1d07b0?action=share&source=collection_link&creator=43776659"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Popov\",\r\n  \"password\": \"P0p0v321\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/token/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ1NDk1MjI4LCJpYXQiOjE3NDU0ODQ0MjgsImp0aSI6Ijc2ZTdiY2NhNzc3MjQ3N2Y4NDZhM2M4NDliZTE4ZTY1IiwidXNlcl9pZCI6NH0.mupH81VFKcRr2_cYNo4TGO9gvqJBTmOdRH4v7oyWEo8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0NTU3MDgyOCwiaWF0IjoxNzQ1NDg0NDI4LCJqdGkiOiIyYTU5OTBiNGIyYWE0YjM3YjI2N2ZlOGM4YzJhZWUwZCIsInVzZXJfaWQiOjR9.k_ateEadjNOEGTEIG5PkRJdW_RudXGKzIIzj1fqNXqM\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/token/refresh/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						"refresh",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ1NDk1MjI4LCJpYXQiOjE3NDU0ODQ0MjgsImp0aSI6Ijc2ZTdiY2NhNzc3MjQ3N2Y4NDZhM2M4NDliZTE4ZTY1IiwidXNlcl9pZCI6NH0.mupH81VFKcRr2_cYNo4TGO9gvqJBTmOdRH4v7oyWEo8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0NTU3MDgyOCwiaWF0IjoxNzQ1NDg0NDI4LCJqdGkiOiIyYTU5OTBiNGIyYWE0YjM3YjI2N2ZlOGM4YzJhZWUwZCIsInVzZXJfaWQiOjR9.k_ateEadjNOEGTEIG5PkRJdW_RudXGKzIIzj1fqNXqM\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/logout/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"logout",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patient Data",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ1NDk1MjI4LCJpYXQiOjE3NDU0ODQ0MjgsImp0aSI6Ijc2ZTdiY2NhNzc3MjQ3N2Y4NDZhM2M4NDliZTE4ZTY1IiwidXNlcl9pZCI6NH0.mupH81VFKcRr2_cYNo4TGO9gvqJBTmOdRH4v7oyWEo8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/me",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patient Conditions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ1NDk1MjI4LCJpYXQiOjE3NDU0ODQ0MjgsImp0aSI6Ijc2ZTdiY2NhNzc3MjQ3N2Y4NDZhM2M4NDliZTE4ZTY1IiwidXNlcl9pZCI6NH0.mupH81VFKcRr2_cYNo4TGO9gvqJBTmOdRH4v7oyWEo8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/me/conditions",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"me",
+						"conditions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patient Treatments",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ1NDk1MjI4LCJpYXQiOjE3NDU0ODQ0MjgsImp0aSI6Ijc2ZTdiY2NhNzc3MjQ3N2Y4NDZhM2M4NDliZTE4ZTY1IiwidXNlcl9pZCI6NH0.mupH81VFKcRr2_cYNo4TGO9gvqJBTmOdRH4v7oyWEo8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/me/treatments",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"me",
+						"treatments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Doctor with ID as Patient",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ1NDk1MjI4LCJpYXQiOjE3NDU0ODQ0MjgsImp0aSI6Ijc2ZTdiY2NhNzc3MjQ3N2Y4NDZhM2M4NDliZTE4ZTY1IiwidXNlcl9pZCI6NH0.mupH81VFKcRr2_cYNo4TGO9gvqJBTmOdRH4v7oyWEo8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/doctors/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"doctors",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Doctor Data",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ1NDk1ODQxLCJpYXQiOjE3NDU0ODUwNDEsImp0aSI6IjdkMDQxNjllOGZjNDQ3ZjU5NzY3ZTgwNWI3YWJjMGVmIiwidXNlcl9pZCI6Mn0.G2VNh0KJtGhfXBrR-9BKQgtXA8XS9DQpby3CMNQvkAk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/doctor/profile",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"doctor",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Doctor View Conditions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ1NDk1ODQxLCJpYXQiOjE3NDU0ODUwNDEsImp0aSI6IjdkMDQxNjllOGZjNDQ3ZjU5NzY3ZTgwNWI3YWJjMGVmIiwidXNlcl9pZCI6Mn0.G2VNh0KJtGhfXBrR-9BKQgtXA8XS9DQpby3CMNQvkAk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/doctor/conditions/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"doctor",
+						"conditions",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Doctor View Treatments",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ1NDk1ODQxLCJpYXQiOjE3NDU0ODUwNDEsImp0aSI6IjdkMDQxNjllOGZjNDQ3ZjU5NzY3ZTgwNWI3YWJjMGVmIiwidXNlcl9pZCI6Mn0.G2VNh0KJtGhfXBrR-9BKQgtXA8XS9DQpby3CMNQvkAk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/doctor/treatments",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"doctor",
+						"treatments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Doctor Add New Treatment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ1NDk1ODQxLCJpYXQiOjE3NDU0ODUwNDEsImp0aSI6IjdkMDQxNjllOGZjNDQ3ZjU5NzY3ZTgwNWI3YWJjMGVmIiwidXNlcl9pZCI6Mn0.G2VNh0KJtGhfXBrR-9BKQgtXA8XS9DQpby3CMNQvkAk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Vitamin C\",\r\n  \"description\": \"Some Dosage\",\r\n  \"prescribed_at\": \"2025-04-27\",\r\n  \"condition\": 1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/treatments/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"treatments",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Doctor Change Treatment",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ1NDk1ODQxLCJpYXQiOjE3NDU0ODUwNDEsImp0aSI6IjdkMDQxNjllOGZjNDQ3ZjU5NzY3ZTgwNWI3YWJjMGVmIiwidXNlcl9pZCI6Mn0.G2VNh0KJtGhfXBrR-9BKQgtXA8XS9DQpby3CMNQvkAk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Vitamin C Updated\",\r\n  \"description\": \"Some New Dosage\",\r\n  \"prescribed_at\": \"2025-04-27\",\r\n  \"condition\": 1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/treatments/4/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"treatments",
+						"4",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Doctor Delete Treatment",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ1NDk1ODQxLCJpYXQiOjE3NDU0ODUwNDEsImp0aSI6IjdkMDQxNjllOGZjNDQ3ZjU5NzY3ZTgwNWI3YWJjMGVmIiwidXNlcl9pZCI6Mn0.G2VNh0KJtGhfXBrR-9BKQgtXA8XS9DQpby3CMNQvkAk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/treatments/4/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"treatments",
+						"4",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
